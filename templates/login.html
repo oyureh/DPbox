@@ -1,0 +1,114 @@
+<!-- if(isset($_POST{})) -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../DPbox/imgs/62941cardfilebox_109271.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ 
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            background-image: url(../imgs/fundologin.jpg);/* trocar img pois é de um banco de img pago*/
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        main{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #formulario{
+            margin-top: 75px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f1f1f1;
+            width: 350px;
+            height: 450px;
+            border-radius: 10px;
+            padding-bottom: 40px;
+        }
+
+        .campo{
+            border: 1px solid #1a3e78;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 20px;
+        }
+
+        input{
+            background-color: transparent;
+            border: none;
+        }
+
+        .cadastrar{
+            background-color: #1a3e78;
+            border-radius: 10px;
+            width: 80%;
+            height: 40px;
+            margin-left: 20px;
+            color: #f1f1f1;
+        }
+
+        .logos{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .logo{
+            margin-top: 20px;
+        }
+
+
+
+
+    </style>
+    <title>login</title>
+</head>
+<body>
+    <main>
+
+            <div id="formulario">
+                <img class="logo" src="../imgs/dpbox-logo2 (1).png " alt="dpboxlogo" width="300px" height="200px">
+
+                <form action=" {% url 'listagem_usuarios'%} " method="POST">
+                    <div class="campo">
+                        <i class="material-icons">person</i>
+                        <input type="name" name="nome" id="inome" placeholder="seu nome" autocomplete="email"
+                        required maxlength="120">
+                    </div>
+                    <div class="campo">
+                        <i class="material-icons">mail</i>
+                        <input type="email" name="gmail" id="ilogin" placeholder="seu gmail" autocomplete="email"
+                        required minlength="15">
+                    </div>
+                    <div class="campo">
+                        <i class="material-icons">vpn_key</i>
+                        <input type="password" name="senha" id="isenha" placeholder="sua senha" 
+                        autocomplete="current-password" >
+                    </div>
+                    <input class="cadastrar" type="submit" value="entrar">
+                </form>
+
+
+            </div>
+    </main>
+
+</body>
+</html>

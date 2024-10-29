@@ -1,0 +1,92 @@
+
+
+:root {
+    --cor01: #ffcc14;
+    --cor02: #004299d0;
+    --cor03: #0F23D9;
+    --cor04: #f5a700;
+    --cor05: #000000;
+    --cor06: #fff;
+    --cor07: #484DB2;
+    --cor08: #311919;
+}
+
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding: 5px 20px; 
+    background-color:var(--cor01) 
+}
+
+header > h1{
+    opacity: 0;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--cor03);
+    font-weight: bolder;
+    margin: 15px;
+    font-size: larger;
+}
+
+.navigation a:hover {
+    background-color: var(--cor07);
+    border-radius: 5px;
+    color: var(--cor04);
+}
+
+main{
+    text-indent: 10px; 
+    text-align: justify;
+    text-decoration: none;
+}
+
+#I{
+    margin: 20px 20px 20px 20px;
+}
+
+#II {
+    margin: 20px 20px 20px 20px;
+}
+
+section >h1{
+    text-align: center;
+}
+
+.box-lista{
+    cursor: pointer;
+}
+
+.box-produtos{
+    position: relative;
+}
+
+.box-marketing{
+    margin: 20px 20px 20px 20px;
+    position:absolute;
+    left: 30%;
+    top: 20%;
+}
+
+footer{
+    
+    background-color:var(--cor04);
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 150px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer > p {
+   margin: 3px 3px 3px 3px;
+}
