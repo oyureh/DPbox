@@ -1,12 +1,7 @@
-
-from django.contrib import admin
 from django.urls import path
-from contact import views
-from project import templates
-
-app_name = 'contact'
+from .views import index
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('login/', views.usuarios, name='listagem_usuarios'),
+   path('index/', index, name='home')
+# path('login/', views.usuarios, name='listagem_usuarios'),
 ]

@@ -6,8 +6,8 @@ def index(request):
         'contact/index.html'
     )
 
-def index(request):
-    return render(
-        request,
-        'contact/index.html'
-    )
+# def index(request):
+#     return render(
+#         request,
+#         'contact/usuarios.html'
+#     )
