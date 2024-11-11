@@ -17,7 +17,7 @@
         }
 
         body{
-            background-image: url(../imgs/fundologin.jpg);/* trocar img pois é de um banco de img pago*/
+            background-image: url(../../imgs//fundologin.jpg);/* trocar img pois é de um banco de img pago*/
             background-repeat: no-repeat;
             background-size: cover;
             width: 100vw;
@@ -32,7 +32,10 @@
         }
 
         #formulario{
-            margin-top: 75px;
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -55,6 +58,7 @@
         input{
             background-color: transparent;
             border: none;
+            outline: none;
         }
 
         .cadastrar{
@@ -85,7 +89,7 @@
     <main>
 
             <div id="formulario">
-                <img class="logo" src="../imgs/dpbox-logo2 (1).png " alt="dpboxlogo" width="300px" height="200px">
+                <img class="logo" src="../../imgs/dpbox-logo2 (1).png " alt="dpboxlogo" width="300px" height="200px">
 
                 <form action=" {% url 'listagem_usuarios'%} " method="POST">
                     <div class="campo">

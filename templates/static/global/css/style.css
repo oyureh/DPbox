@@ -199,16 +199,18 @@ footer > p {
     justify-content: center;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:1000px) {
     
     #container-QS {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
+        flex-wrap: wrap; 
+    }
+
+    .accordion{
+        align-self: center;
     }
 }
-
-
 
 #apresentacao{
     max-width: 600px;
