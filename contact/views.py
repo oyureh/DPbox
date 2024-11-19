@@ -12,9 +12,9 @@ def login(request):
         'contact/login.html'
     )
 
-def Quem_somos(request):
+def quemsomos(request):
     return render(
         request,
-        'contact/Quem-somos.html'
+        'contact/quemsomos.html'
     )
 

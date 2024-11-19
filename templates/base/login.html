@@ -1,36 +1,29 @@
-<!-- if(isset($_POST{})) -->
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../DPbox/imgs/62941cardfilebox_109271.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'global/css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'global/imgs/62941cardfilebox_109271.ico' %}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- 
+    <title>login</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
-
-        body{
-            background-image: url(../../imgs//fundologin.jpg);/* trocar img pois é de um banco de img pago*/
+        #bodyLogin{
+            background-image: url(../imgs/Digipaper&Box.png);/* trocar img pois é de um banco de img pago*/
             background-repeat: no-repeat;
             background-size: cover;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
         }
-
-        main{
+        
+        #mainLogin{
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
         }
-
+        
         #formulario{
             position:absolute;
             top: 50%;
@@ -46,7 +39,7 @@
             border-radius: 10px;
             padding-bottom: 40px;
         }
-
+        
         .campo{
             border: 1px solid #1a3e78;
             margin: 5px;
@@ -54,13 +47,13 @@
             border-radius: 5px;
             margin: 20px;
         }
-
+        
         input{
             background-color: transparent;
             border: none;
             outline: none;
         }
-
+        
         .cadastrar{
             background-color: #1a3e78;
             border-radius: 10px;
@@ -69,29 +62,19 @@
             margin-left: 20px;
             color: #f1f1f1;
         }
-
-        .logos{
-            display: flex;
-            flex-direction: row;
-        }
-
-        .logo{
+        
+        .logoLogin{
             margin-top: 20px;
         }
-
-
-
-
     </style>
-    <title>login</title>
 </head>
-<body>
-    <main>
+<body id="bodyLogin">
+    <main id="mainLogin">
 
             <div id="formulario">
-                <img class="logo" src="../../imgs/dpbox-logo2 (1).png " alt="dpboxlogo" width="300px" height="200px">
+                <img class="logoLogin" src="../../imgs/dpbox-logo2 (1).png " alt="dpboxlogo" width="300px" height="200px">
 
-                <form action=" {% url 'listagem_usuarios'%} " method="POST">
+                <form action="  " method="POST">
                     <div class="campo">
                         <i class="material-icons">person</i>
                         <input type="name" name="nome" id="inome" placeholder="seu nome" autocomplete="email"
@@ -99,7 +82,7 @@
                     </div>
                     <div class="campo">
                         <i class="material-icons">mail</i>
-                        <input type="email" name="gmail" id="ilogin" placeholder="seu gmail" autocomplete="email"
+                        <input  type="email" name="gmail" id="ilogin" placeholder="seu gmail" autocomplete="email"
                         required minlength="15">
                     </div>
                     <div class="campo">
@@ -113,6 +96,6 @@
 
             </div>
     </main>
-
+{% comment %} {% url 'listagem_usuarios'%} {% endcomment %}
 </body>
 </html>
