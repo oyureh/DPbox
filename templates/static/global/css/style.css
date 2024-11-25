@@ -56,6 +56,10 @@ header {
     flex: 0 1 auto;
 }
 
+.navigation a:hover {
+    border-bottom: 3px solid var(--cor04) ;
+}
+
 #divBusca {
     margin-left: 20px;
     margin-top: 20px;
@@ -190,7 +194,6 @@ footer > p {
 .maps{
     border-radius: 10px;
     flex: 0 2 auto;
-    width: 20%;
 }
 
 .row{
