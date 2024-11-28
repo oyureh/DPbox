@@ -11,21 +11,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   
 </head>
 <body>
-  <header>
-    <section id="header_esquerda">
-      <img id="logo" src="{% static 'global/imgs/dpbox-logo1.png' %}" alt="logo dpbox" width="115" height="70">
-      <nav class="navigation">
-          <a href="../templates/index.html">home</a>
-          <a href="../templates/Quem-somos.html"> Quem somos</a>
-      </nav>
-    </section>
+<header>
+  {% block content%}
 
-    <section id="divBusca">
-      <a href="../templates/login.html">
-        <p> Área restrita</p>
-      </a>
-    </section>
-
+  {% endblock content%}
 </header>
 <main>
     <section id="container-QS">

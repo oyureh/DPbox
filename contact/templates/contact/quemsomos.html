@@ -1,1 +1,22 @@
 {% extends "base/quemsomos.html" %}
+
+{% load static %} 
+
+{%block content%}
+    <header>
+        <section id="header_esquerda">
+        <img id="logo" src="{% static 'global/imgs/dpbox-logo1.png' %}" alt="logo dpbox" width="130" height="80">
+        <nav class="navigation">
+            <a href="{% url 'index' %} "> home</a>
+            <a href="{% url 'quemsomos' %} "> Quem somos</a>
+        </nav>
+        </section>
+
+        <section id="divBusca">
+        <a href="{% url 'login' %}">
+            <p> Área restrita</p>
+        </a>
+        </section>
+
+    </header>
+{%endblock content%}

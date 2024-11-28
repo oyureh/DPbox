@@ -606,4 +606,64 @@ input{
     margin-top: 20px;
 }
 
+/* lista cadastros */
+
+#container-table {
+    display: flex;
+    flex-direction: column; 
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+table {
+    border-collapse: collapse;
+    overflow: hidden; 
+    border-spacing: 0;
+    width: 80%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid ;
+}
+
+th {
+    background-color: #16315c;
+    color: var(--cor04) ;
+    font-weight: bolder;
+}
+
+tr{
+    background-color: var(--cor02);
+    color:var(--cor04) ;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #16315c;
+  }
+
+tr:hover {
+    background-color: #102342;
+}
+
+@media screen and (max-width: 740px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    tr {
+        margin-bottom: 10px;
+    }
+    th, td {
+        text-align: left;
+        padding-left: 50%;
+        position: relative;
+    }
+    th::before, td::before {
+        position: absolute;
+        left: 10px;
+    }
+}
 

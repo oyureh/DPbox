@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from contact.models import Usuarios 
 
 
 def index(request):
@@ -19,23 +20,38 @@ def quemsomos(request):
         'contact/quemsomos.html'
     )
 
-def usuarios(request):
-    return render(
-        request,
-        'contact/usuarios.html'
-    )
+# def usuarios(request):
+#     return render(
+#         request,
+#         'contact/usuarios.html'
+#     )
 
-from contact.models import Usuarios 
+# def usuarios(request):
+#     contacts = Usuarios.objects.all()
+
+#     context ={
+#         'contacts': contacts,
+#     }
+
+#     return render(
+#         request,
+#         'contact/usuarios.html',
+#         context
+#     )
 
 def usuarios(request):
-    contacts = usuarios.objects.all()
-    # no django esta dizendo que o erro esta no objects
-    context ={
-        'contacts': contacts,
+    if request.method == 'POST':
+        novo_usuario = Usuarios(
+            nome=request.POST.get('nome'),
+            gmail=request.POST.get('gmail'), 
+            senha=request.POST.get('senha')  
+        )
+
+        novo_usuario.save()
+        return redirect('index')  
+
+    usuarios = {
+        'usuarios': Usuarios.objects.all()
     }
+    return render(request, 'contact/usuarios.html', usuarios)
 
-    return render(
-        request,
-        'contact/usuarios.html',
-        context
-    )

@@ -70,24 +70,24 @@
 </head>
 <body id="bodyLogin">
     <main id="mainLogin">
-
+            
+        
             <div id="formulario">
                 <img class="logoLogin" src="../../imgs/dpbox-logo2 (1).png " alt="dpboxlogo" width="300px" height="200px">
 
-                <form action="  " method="POST">
+                <form action="{% url 'usuarios'%}  " method="POST">
+                {% csrf_token %}
                     <div class="campo">
                         <i class="material-icons">person</i>
-                        <input type="name" name="nome" id="inome" placeholder="seu nome" autocomplete="email"
-                        required maxlength="120">
+                        <input type="name" name="nome" id="inome" placeholder="Seu nome" >
                     </div>
                     <div class="campo">
                         <i class="material-icons">mail</i>
-                        <input  type="email" name="gmail" id="ilogin" placeholder="seu gmail" autocomplete="email"
-                        required minlength="15">
+                        <input  type="email" name="gmail" id="ilogin" placeholder="Seu gmail" autocomplete="email" required minlength="15">
                     </div>
                     <div class="campo">
                         <i class="material-icons">vpn_key</i>
-                        <input type="password" name="senha" id="isenha" placeholder="sua senha" 
+                        <input type="password" name="senha" id="isenha" placeholder="Sua senha" 
                         autocomplete="current-password" >
                     </div>
                     <input class="cadastrar" type="submit" value="entrar">
@@ -96,6 +96,5 @@
 
             </div>
     </main>
-{% comment %} {% url 'listagem_usuarios'%} {% endcomment %}
 </body>
 </html>
