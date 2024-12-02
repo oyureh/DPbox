@@ -1,7 +1,7 @@
 
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 0%;
 }
 
 
@@ -167,43 +167,15 @@ header {
 /*fim pagina home*/
 
 
-.py-5{
-    display: flex;
-    justify-content: space-evenly;
-    background-color:var(--cor04);
-    margin: 0;
-    padding: 0;
-}
+    .py-5{
+        background-color: var(--cor04) !important;
+        color: black !important;
+    }
 
-.container{
-    margin: 0;
-    padding: 0;
-}
-
-footer > p {
-   margin: 5px 5px 5px 5px;
-}
-
-.nav-item-mb-2:hover{
-    text-decoration: underline;
-    font-weight: bolder;
-    color: black;
-    flex: 0 1 auto;
-}
-
-.maps{
-    border-radius: 10px;
-    flex: 0 2 auto;
-}
-
-.row{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex: 0 1 auto;
-    margin-right: 0;
-    margin-left: 0;
-}
+  
+  footer a img:hover {
+    transform: scale(1.1) !important;
+  }
 
 /*inicio pagina quem somos*/
 
@@ -214,7 +186,7 @@ footer > p {
     justify-content: center;
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1200px) {
     
     #container-QS {
         display: flex;
@@ -223,16 +195,17 @@ footer > p {
     }
 
     .accordion{
-        align-self: center;
+        align-self: center !important;
     }
 }
 
+
 #apresentacao{
-    max-width: 600px;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
-    margin: 20px 40px 20px 40px;
-    padding: 30px 50px 10px 50px;
+    margin: 20px 20px 20px 20px;
+    padding: 30px 40px 10px 40px;
     font-size: 1.1rem;
     background-color: var(--cor02);
     border-radius: 7px;
@@ -259,18 +232,9 @@ footer > p {
         flex-direction: row;
         flex-wrap: wrap;
     }
-
-    .accordion{
-        margin: 3%;
-        min-width: 200px;
-    }
     
 }
 
-.accordion{
-    margin-right: 30px;
-    min-width: 200px;
-}
 
 .accordion-body{
     background-color: var(--cor08);
@@ -608,19 +572,13 @@ input{
 
 /* lista cadastros */
 
-#container-table {
-    display: flex;
-    flex-direction: column; 
-    display: flex;
-    justify-content: center;
-    align-items: center;    
+#lista-usuarios{
+    width: 100vw;
 }
 
-table {
-    border-collapse: collapse;
-    overflow: hidden; 
-    border-spacing: 0;
-    width: 80%;
+table{
+    width: 100%;
+    border-collapse: collapse; 
 }
 
 th, td {
@@ -650,9 +608,7 @@ tr:hover {
 }
 
 @media screen and (max-width: 740px) {
-    table, thead, tbody, th, td, tr {
-        display: block;
-    }
+
     tr {
         margin-bottom: 10px;
     }

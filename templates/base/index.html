@@ -137,32 +137,38 @@
 </main>
 
 <footer class="py-5">
-<div class="container">
+  <div class="container">
     <div class="row">
-      <div  style="margin: 0;" class="col-6 col-md-2 mb-3">
-        <h5>Informações</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><p> 📍 Rua Floriano Peixoto, nº 1107 - Nova Imperatriz, Imperatriz 65.907-200</p></li>
-          <li class="nav-item mb-2">☎️ (99)3015-0446 ou (99)98431-8251</li>
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <h4>Informações</h4>
+        <ul class="list-unstyled">
+          <li class="mb-2">📍 Rua Floriano Peixoto, nº 1107 - Nova Imperatriz, Imperatriz 65.907-200</li>
+          <li class="mb-2">☎️ (99) 3015-0446 ou (99) 98431-8251</li>
         </ul>
       </div>
+
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <iframe class=" rounded w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.371657088217!2d-47.497162364535484!3d-5.51172384263385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92c55e35ce03e6ef%3A0xc12ce2acb091910d!2sR.%20Floriano%20Peixoto%2C%201107%20-%20Nova%20Imperatriz%2C%20Imperatriz%20-%20MA%2C%2065907-200!5e0!3m2!1spt-BR!2sbr!4v1726183611670!5m2!1spt-BR!2sbr" width="100%" height="250" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> </iframe>
+      </div>
       
-      <div style="margin: 0;" class="col-md-5 offset-md-1 mb-3">
-        <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.371657088217!2d-47.497162364535484!
-        3d-5.51172384263385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92c55e35ce03e6ef%3A0xc12ce2acb091910d!2sR.
-        %20Floriano%20Peixoto%2C%201107%20-%20Nova%20Imperatriz%2C%20Imperatriz%20-%20MA%2C%2065907-200!5e0!3m2!1spt-BR!
-        2sbr!4v1726183611670!5m2!1spt-BR!2sbr" width="250px" height="300" style="border: 2;" allowfullscreen="" 
-        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>          
+      <div class="col-12 col-lg-4 mb-4 text-center">
+        <h4>Conheça nossas redes </h4>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="https://www.instagram.com/dpboxoficial/" target="_blank">
+            <img src="{% static 'global/imgs/150898146_10462345.png' %}" alt="Instagram logo" width="75" height="75">
+          </a>
+          <a href="https://www.facebook.com/dpboxoficial" target="_blank">
+            <img src="{% static 'global/imgs/150897973_10462343.png' %}" alt="Facebook logo" width="75" height="75">
+          </a>
+        </div>
       </div>
     </div>
-
     <hr>
-      
-      <div class="list-unstyled-d-flex">
-        <a class="link-body-emphasis" href="https://www.instagram.com/dpboxoficial/" target="_blank"> <img src="{% static 'global/imgs/150898146_10462345.png' %} " alt="logo instagram" width="80" height="80"> </a>
-        <a class="link-body-emphasis" href="https://www.facebook.com/dpboxoficial" target="_blank"><img src="{% static 'global/imgs/150897973_10462343.png' %}" alt="logo facebook" width="80" height="80"></a>
-      </div>
+    <div class="text-center mt-3">
+      <p class="mb-0">© 2024 DPBox. Todos os direitos reservados.</p>
+    </div>
   </div>
 </footer>
+
 </body>
 </html>

@@ -1,6 +1,7 @@
 {% extends "base/usuarios.html" %}
 
 {%block content%}
+    <main id="lista-usuarios">
         <table>
             <thead>
                 <tr>
@@ -19,7 +20,7 @@
                         </td>
 
                         <td> 
-                           {{ usuarios.nome }} 
+                            {{ usuarios.nome }} 
                         </td>
 
                         <td> 
@@ -33,6 +34,5 @@
                 {% endfor %}
             </tbody>
         </table>
-
-   
+    </main>
 {% endblock content%}

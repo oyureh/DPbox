@@ -3,21 +3,17 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Cadastro</title>
     <link rel="stylesheet" href="{% static 'global/css/style.css' %}">
 </head>
-<body>
-<header>
+<body> 
+{% block content %}
+    <main id="lista-usuarios">
+   
 
-</header>
-<main>
-    {% block content %}
-        
-    {% endblock content %}
-</main>
-<footer>
-
-</footer>
+    
+    </main>
+{% endblock content %}
 </body>
 </html>

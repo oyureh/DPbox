@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from contact.models import Usuarios 
+from django.http import HttpResponse
+from django.db import IntegrityError
 
 
 def index(request):
@@ -9,10 +11,7 @@ def index(request):
     )
 
 def login(request):
-    return render(
-        request,
-        'contact/login.html'
-    )
+    return render( request, 'contact/login.html')
 
 def quemsomos(request):
     return render(
@@ -20,38 +19,29 @@ def quemsomos(request):
         'contact/quemsomos.html'
     )
 
-# def usuarios(request):
-#     return render(
-#         request,
-#         'contact/usuarios.html'
-#     )
-
-# def usuarios(request):
-#     contacts = Usuarios.objects.all()
-
-#     context ={
-#         'contacts': contacts,
-#     }
-
-#     return render(
-#         request,
-#         'contact/usuarios.html',
-#         context
-#     )
-
 def usuarios(request):
+    
     if request.method == 'POST':
-        novo_usuario = Usuarios(
-            nome=request.POST.get('nome'),
-            gmail=request.POST.get('gmail'), 
-            senha=request.POST.get('senha')  
-        )
+        nome = request.POST.get('nome')
+        gmail = request.POST.get('gmail')
+        senha = request.POST.get('senha')
 
-        novo_usuario.save()
+        if not all([nome, gmail, senha]):
+            return HttpResponse("Todos os campos são obrigatórios!", status=400)
+
+        try:
+            novo_usuario = Usuarios(
+                nome=nome,
+                gmail=gmail,
+                senha=senha
+            )
+            novo_usuario.save()
+        except IntegrityError:
+            return HttpResponse("Este e-mail já está cadastrado!", status=400)
+
         return redirect('index')  
-
+        
     usuarios = {
         'usuarios': Usuarios.objects.all()
     }
     return render(request, 'contact/usuarios.html', usuarios)
-
