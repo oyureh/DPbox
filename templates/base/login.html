@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'global/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'global/css/partials.css' %}">
     <link rel="shortcut icon" href="{% static 'global/imgs/62941cardfilebox_109271.ico' %}" type="image/x-icon">
-    <link href="{% static 'https://fonts.googleapis.com/icon?family=Material+Icons' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>login</title>
     <style>
-        #bodyLogin{
-            background-image: url(../imgs/Digipaper&Box.png);/* trocar img pois é de um banco de img pago*/
+        /* #bodyLogin{
+            background-image: url(../imgs/Digipaper&Box.png);
             background-repeat: no-repeat;
             background-size: cover;
             width: 100%;
@@ -48,7 +49,7 @@
             margin: 20px;
         }
         
-        input{
+        .input-login{
             background-color: transparent;
             border: none;
             outline: none;
@@ -65,7 +66,7 @@
         
         .logoLogin{
             margin-top: 20px;
-        }
+        } */
     </style>
 </head>
 <body id="bodyLogin">
@@ -73,24 +74,24 @@
             
         
             <div id="formulario">
-                <img class="logoLogin" src="../../imgs/dpbox-logo2 (1).png " alt="dpboxlogo" width="300px" height="200px">
+                <img class="logoLogin" src="{% static 'global/imgs/dpbox-logo2.png'%}" alt="dpboxlogo" width="310px" height="200px">
 
                 <form action="{% url 'usuarios'%}  " method="POST">
                 {% csrf_token %}
                     <div class="campo">
                         <i class="material-icons">person</i>
-                        <input type="name" name="nome" id="inome" placeholder="Seu nome" >
+                        <input class="input-login"   type="name" name="nome" id="inome" placeholder="Seu nome" >
                     </div>
                     <div class="campo">
                         <i class="material-icons">mail</i>
-                        <input  type="email" name="gmail" id="ilogin" placeholder="Seu gmail" autocomplete="email" required minlength="15">
+                        <input class="input-login"  type="email" name="gmail" id="ilogin" placeholder="Seu gmail" autocomplete="email" required minlength="15">
                     </div>
                     <div class="campo">
                         <i class="material-icons">vpn_key</i>
-                        <input type="password" name="senha" id="isenha" placeholder="Sua senha" 
+                        <input class="input-login"   type="password" name="senha" id="isenha" placeholder="Sua senha" 
                         autocomplete="current-password" >
                     </div>
-                    <input class="cadastrar" type="submit" value="entrar">
+                    <input  class="cadastrar" type="submit" value="entrar">
                 </form>
 
 

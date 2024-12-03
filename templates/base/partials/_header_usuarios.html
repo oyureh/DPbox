@@ -1,0 +1,14 @@
+{% load static %} 
+<header id="header-usuarios">
+    <h1> Cadastros</h1>
+    <nav>
+        <a class="nav-usuarios" href="{% url 'index' %}">Home</a>
+        <a class="nav-usuarios" href="{% url 'quemsomos' %}">Quem Somos</a>
+        <a class="nav-usuarios" href="{% url 'login' %}">login</a>
+    </nav>
+
+    <form action="" method="get">
+        <img src="{% static 'global/imgs/lupa.svg'%}" alt="">
+        <input type="search" placeholder="search" id="search" class="search-input" name="q">
+    </form>
+</header>

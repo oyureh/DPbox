@@ -1,7 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect #get_object_or_404
 from contact.models import Usuarios 
 from django.http import HttpResponse
 from django.db import IntegrityError
+from django.db.models import Q
+
 
 
 def index(request):
@@ -19,6 +21,11 @@ def quemsomos(request):
         'contact/quemsomos.html'
     )
 
+def _header_usuarios(request):
+    return render(
+        request,
+        'contact/_header_usuarios'
+    )
 def usuarios(request):
     
     if request.method == 'POST':
@@ -45,3 +52,20 @@ def usuarios(request):
         'usuarios': Usuarios.objects.all()
     }
     return render(request, 'contact/usuarios.html', usuarios)
+
+def search(request):
+    search_value = request.GET.get('q', '').strip()
+
+    if search_value == '':
+        return redirect('contact:index')
+
+    contacts = Contact.objects \
+        .filter(show=True)\
+        .filter(
+            Q(first_name__icontains=search_value) |
+            Q(last_name__icontains=search_value) |
+            Q(phone__icontains=search_value) |
+            Q(email__icontains=search_value)
+        )\
+        .order_by('-id')
+    

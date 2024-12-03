@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Cadastro</title>
     <link rel="stylesheet" href="{% static 'global/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'global/css/partials.css' %}">
 </head>
-<body> 
+<body id="body-usuarios"> 
+
+    {% include 'base/partials/_header_usuarios.html' %}
+
 {% block content %}
     <main id="lista-usuarios">
    

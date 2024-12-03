@@ -28,66 +28,6 @@ main{
 }
 
 
-header {
-    display: flex;
-    justify-content: space-between; 
-    flex-wrap: wrap;
-    background-color:#fafafa;
-    position: fixed;
-    z-index: 1090;
-    width: 100%;  
-}
-
-#header_esquerda{
-    margin-left: 40px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-size:14px;
-    flex: 2 4 auto;
-}
-
-.navigation a {
-    text-decoration: none;
-    color: var(--cor03);
-    font-weight: bolder;
-    margin: 15px;
-    font-size: larger;
-    flex: 0 1 auto;
-}
-
-.navigation a:hover {
-    border-bottom: 3px solid var(--cor04) ;
-}
-
-#divBusca {
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-right: 30px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #033b85e1;
-    width:200px;
-    height:32px;
-    border-radius: 10px;
-    cursor: pointer;
-    flex: 0 2 auto;
-}
-
-#divBusca > a {
-    margin-top: 12px;
-    font-weight: bolder;
-    color: var(--cor01);
-    text-decoration: none;
-}
-
-#logo{
-    align-self: center;
-    margin: 0px 30px 0px 10px;
-}
-
 .container-produtos{
     display: flex;
     align-items: center;
@@ -166,17 +106,6 @@ header {
 
 /*fim pagina home*/
 
-
-    .py-5{
-        background-color: var(--cor04) !important;
-        color: black !important;
-    }
-
-  
-  footer a img:hover {
-    transform: scale(1.1) !important;
-  }
-
 /*inicio pagina quem somos*/
 
 #container-QS{
@@ -199,6 +128,9 @@ header {
     }
 }
 
+.accordion{
+    margin: 20px;
+}
 
 #apresentacao{
     max-width: 500px;
@@ -404,48 +336,6 @@ header {
 
 /*fim hub de produtos*/
 
-/* footer Q.S */
-footer{
-    display: flex;
-    flex-flow: row wrap;
-    background-color: var(--cor04);
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 40px;
-}
-
-.list-unstyled-d-flex{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.container-redes{
-    align-self: flex-end;
-}
-
-
-.nav{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.container-contatos{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.container-redes{
-    margin-bottom: 50px;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-}
-
-
 
 /* nossas instalações */
 
@@ -513,7 +403,7 @@ p.hub{
 /* login */
 
 #bodyLogin{
-    background-image: url(../imgs/Digipaper&Box.png);/* trocar img pois é de um banco de img pago*/
+    background-image: url(../imgs/fundologin.jpg); /*trocar img por é de um banco de imagens */
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -551,7 +441,7 @@ p.hub{
     margin: 20px;
 }
 
-input{
+.input-login{
     background-color: transparent;
     border: none;
     outline: none;
@@ -560,17 +450,23 @@ input{
 .cadastrar{
     background-color: var(--cor02);
     border-radius: 10px;
-    width: 80%;
+    width: 82%;
     height: 40px;
     margin-left: 20px;
     color: var(--cor08);
+    border: none;
+    outline: none;
 }
 
 .logoLogin{
     margin-top: 20px;
-}
+} 
 
 /* lista cadastros */
+
+#body-usuarios{
+    background-color: #0d1c35  !important;
+}
 
 #lista-usuarios{
     width: 100vw;
@@ -579,32 +475,37 @@ input{
 table{
     width: 100%;
     border-collapse: collapse; 
+    margin-top: 150px;
 }
 
 th, td {
     padding: 10px;
     text-align: left;
-    border: 1px solid ;
+    border: 2px solid var(--cor04);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    text-align: center;
 }
 
 th {
     background-color: #16315c;
-    color: var(--cor04) ;
+    color: var(--cor08) ;
     font-weight: bolder;
 }
 
 tr{
-    background-color: var(--cor02);
-    color:var(--cor04) ;
+    background-color: #203f70;
+    color:var(--cor08) ;
     font-weight: 600;
 }
 
 tr:nth-child(even) {
-    background-color: #16315c;
+    background-color: var(--cor02);
   }
 
 tr:hover {
-    background-color: #102342;
+    background-color: #183463;
 }
 
 @media screen and (max-width: 740px) {
