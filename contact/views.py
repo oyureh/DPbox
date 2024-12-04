@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect #get_object_or_404
 from contact.models import Usuarios 
 from django.http import HttpResponse
 from django.db import IntegrityError
-from django.db.models import Q
+from django.core.paginator import Paginator
 
 
 
@@ -26,7 +26,15 @@ def _header_usuarios(request):
         request,
         'contact/_header_usuarios'
     )
+
 def usuarios(request):
+
+    usuarios =  Usuarios.objects.all()
+    paginator = Paginator(usuarios, 2)  # Show 25 contacts per page.
+
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    return render(request, "contact/usuarios.html", {"page_obj": page_obj})
     
     if request.method == 'POST':
         nome = request.POST.get('nome')
@@ -53,19 +61,3 @@ def usuarios(request):
     }
     return render(request, 'contact/usuarios.html', usuarios)
 
-def search(request):
-    search_value = request.GET.get('q', '').strip()
-
-    if search_value == '':
-        return redirect('contact:index')
-
-    contacts = Contact.objects \
-        .filter(show=True)\
-        .filter(
-            Q(first_name__icontains=search_value) |
-            Q(last_name__icontains=search_value) |
-            Q(phone__icontains=search_value) |
-            Q(email__icontains=search_value)
-        )\
-        .order_by('-id')
-    

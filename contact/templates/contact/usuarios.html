@@ -12,8 +12,8 @@
                 </tr>
             </thead>
 
-            <tbody>
-                {% for usuarios in usuarios %}
+            <tbody id="tabela-usuarios">
+                {% for usuarios in page_obj %}
                     <tr>
                         <td> 
                             {{ usuarios.id_usuario }} 

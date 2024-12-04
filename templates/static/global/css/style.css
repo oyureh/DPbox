@@ -14,6 +14,7 @@
     --cor06: #fff;
     --cor07: #fafafa;
     --cor08: #f1f1f1;
+    --cor09: white;
 }
 
 body{
@@ -464,63 +465,49 @@ p.hub{
 
 /* lista cadastros */
 
-#body-usuarios{
-    background-color: #0d1c35  !important;
+#body-usuarios {
+    background-color: #0d1c35 !important;
 }
 
-#lista-usuarios{
-    width: 100vw;
-}
-
-table{
+#lista-usuarios {
     width: 100%;
-    border-collapse: collapse; 
+    overflow-x: auto; /* Adiciona barra de rolagem horizontal */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 150px;
+    table-layout: auto; /* Permite que as colunas se ajustem automaticamente */
 }
 
 th, td {
     padding: 10px;
-    text-align: left;
+    text-align: center;
     border: 2px solid var(--cor04);
     border-left: none;
     border-right: none;
     border-top: none;
-    text-align: center;
+    word-wrap: break-word; /* Quebra o conteúdo de célula longo */
 }
 
 th {
     background-color: #16315c;
-    color: var(--cor08) ;
+    color: var(--cor08);
     font-weight: bolder;
 }
 
-tr{
+tr {
     background-color: #203f70;
-    color:var(--cor08) ;
+    color: var(--cor08);
     font-weight: 600;
 }
 
 tr:nth-child(even) {
     background-color: var(--cor02);
-  }
-
-tr:hover {
-    background-color: #183463;
 }
 
-@media screen and (max-width: 740px) {
-
-    tr {
-        margin-bottom: 10px;
-    }
-    th, td {
-        text-align: left;
-        padding-left: 50%;
-        position: relative;
-    }
-    th::before, td::before {
-        position: absolute;
-        left: 10px;
-    }
+tr:hover {
+    background-color: #183463 !important;
 }
 

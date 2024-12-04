@@ -13,6 +13,9 @@
     --cor06: #fff;
     --cor07: #fafafa;
     --cor08: #f1f1f1;
+    --spacing: 1.5rem;
+    --transition-fast: 300ms;
+    --link-dark-color: rgb(0, 83, 134);
 }
 
 
@@ -79,7 +82,7 @@ header {
     display: flex;
     justify-content: space-between; 
     flex-wrap: wrap;
-    background-color:#fafafa;
+    background-color:var(--cor07);
     position: fixed;
     z-index: 1090;
     width: 100%;  
@@ -135,7 +138,8 @@ header {
     margin: 0px 30px 0px 10px;
 }
 /* fim header */
-/* 
+
+
 #header-usuarios{
     width: 100%;
     height: 200px;
@@ -163,7 +167,7 @@ header {
     border-bottom: 2px solid var(--cor04);
 }
 
-form{
+.forms{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -177,8 +181,39 @@ form{
 
 .search-input{
     color: black;
+    outline: none;
+    border: none;
+    background-color: transparent;
 }
 
 .search-input::placeholder{
     color: black;
-} */
+} 
+
+.pagination {
+    display: flex;
+    justify-content: center;
+   
+  }
+
+.current{
+     color: var(--cor04);
+     font-size: 0.9rem;
+     color: var(--cor08);
+}
+  
+  .pagination .step-links {
+    display: flex;
+    gap: calc(var(--spacing) * 0.8);
+  }
+  
+  .pagination .step-links a {
+    color: var(--cor08);
+    transition: color var(--transition-fast) ease-in-out;
+    text-decoration: none;
+    display: block;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  
+

@@ -7,8 +7,26 @@
         <a class="nav-usuarios" href="{% url 'login' %}">login</a>
     </nav>
 
-    <form action="" method="get">
+    <form class="forms" action="" method="get">
         <img src="{% static 'global/imgs/lupa.svg'%}" alt="">
         <input type="search" placeholder="search" id="search" class="search-input" name="q">
     </form>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1"> Primeiro</a>
+                <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Último </a>
+            {% endif %}
+        </span>
+    </div>
 </header>
