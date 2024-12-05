@@ -3,7 +3,7 @@ from contact.models import Usuarios
 from django.http import HttpResponse
 from django.db import IntegrityError
 from django.core.paginator import Paginator
-
+from django.contrib.auth.hashers import make_password 
 
 
 def index(request):
@@ -28,14 +28,6 @@ def _header_usuarios(request):
     )
 
 def usuarios(request):
-
-    usuarios =  Usuarios.objects.all()
-    paginator = Paginator(usuarios, 2)  # Show 25 contacts per page.
-
-    page_number = request.GET.get("page")
-    page_obj = paginator.get_page(page_number)
-    return render(request, "contact/usuarios.html", {"page_obj": page_obj})
-    
     if request.method == 'POST':
         nome = request.POST.get('nome')
         gmail = request.POST.get('gmail')
@@ -44,20 +36,27 @@ def usuarios(request):
         if not all([nome, gmail, senha]):
             return HttpResponse("Todos os campos são obrigatórios!", status=400)
 
+        senha_hash = make_password(senha)
+
         try:
             novo_usuario = Usuarios(
                 nome=nome,
                 gmail=gmail,
-                senha=senha
+                senha=senha_hash  # Salva a senha criptografada
             )
+            
             novo_usuario.save()
         except IntegrityError:
             return HttpResponse("Este e-mail já está cadastrado!", status=400)
 
-        return redirect('index')  
-        
-    usuarios = {
-        'usuarios': Usuarios.objects.all()
-    }
-    return render(request, 'contact/usuarios.html', usuarios)
+        return redirect('index')
+
+    # Tratamento para requisições GET
+    usuarios = Usuarios.objects.all()
+    paginator = Paginator(usuarios, 5)  
+
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, "contact/usuarios.html", {"page_obj": page_obj})
 

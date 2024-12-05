@@ -173,7 +173,8 @@ header {
     align-items: center;
     justify-content: space-evenly;
     
-    width: 17%;
+    min-width: 120px;
+    width: 18%;
     height: 32px;
     background-color:var(--cor08);
     border-radius: 10px;
@@ -184,6 +185,7 @@ header {
     outline: none;
     border: none;
     background-color: transparent;
+    
 }
 
 .search-input::placeholder{
