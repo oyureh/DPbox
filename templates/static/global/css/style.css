@@ -403,8 +403,8 @@ p.hub{
 
 /* login */
 
-#bodyLogin{
-    background-image: url(../imgs/fundo-site-dpbox.png); /*trocar img por é de um banco de imagens */
+/* #bodyLogin{
+    background-image: url(../imgs/fundo-site-dpbox.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
@@ -461,7 +461,7 @@ p.hub{
 
 .logoLogin{
     margin-top: 20px;
-} 
+}  */
 
 /* lista cadastros */
 
