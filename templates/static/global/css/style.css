@@ -4,6 +4,7 @@
     padding: 0%;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
 
 :root {
     --cor01: #ffcc14;
@@ -18,8 +19,8 @@
 }
 
 body{
-
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
+    /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 }
 
 main{
@@ -131,6 +132,7 @@ main{
 
 .accordion{
     margin: 20px;
+    min-width: 30% !important;
 }
 
 #apresentacao{
@@ -401,68 +403,6 @@ p.hub{
 }
 
 
-/* login */
-
-/* #bodyLogin{
-    background-image: url(../imgs/fundo-site-dpbox.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-}
-
-#mainLogin{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#formulario{
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--cor08);
-    width: 350px;
-    height: 450px;
-    border-radius: 10px;
-    padding-bottom: 40px;
-}
-
-.campo{
-    border: 1px solid var(--cor02);
-    margin: 5px;
-    padding: 5px;
-    border-radius: 5px;
-    margin: 20px;
-}
-
-.input-login{
-    background-color: transparent;
-    border: none;
-    outline: none;
-}
-
-.cadastrar{
-    background-color: var(--cor02);
-    border-radius: 10px;
-    width: 82%;
-    height: 40px;
-    margin-left: 20px;
-    color: var(--cor08);
-    border: none;
-    outline: none;
-}
-
-.logoLogin{
-    margin-top: 20px;
-}  */
-
 /* lista cadastros */
 
 #body-usuarios {
@@ -511,3 +451,127 @@ tr:hover {
     background-color: #183463 !important;
 }
 
+#formulario{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    padding-bottom: 40px;       
+    background-color: var(--cor08);
+    width: 300px;
+    height: 450px;   
+    border-radius: 10px;
+}
+
+.form-responsive{
+    background-color: transparent;  
+}
+
+.campo{
+    border: 1px solid var(--cor02);
+    margin: 5px;
+    padding: 5px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input-login{
+    background-color:transparent;
+    border: none;
+    outline: none;
+    padding: 0px 10px 0px 10px;
+
+}
+
+.cadastrar{
+    background-color: var(--cor02);
+    border-radius: 10px;
+    width: 82%;
+    height: 40px;
+    margin-left: 20px;
+    color: var(--cor08);
+    border: none;
+    outline: none;
+}
+
+.login-responsive, .forget-password{
+    background-color: #f8951d;
+    width: 35px;
+    height: 35px;
+    transition: 1s ease;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    position: relative;
+}
+
+.login-responsive img, .forget-password img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.link-login {
+    opacity: 0;
+    visibility:hidden;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    transition: 1.5s ease; 
+    text-decoration: none;
+}
+
+.login-responsive{
+    position:fixed;
+    left: -19%;
+    transform: translateX(82%);
+}
+
+.forget-password{
+    position:fixed;
+    left: -19%;
+    top:60%;
+    transform: translateX(82%);
+}
+
+.login-responsive:hover, .forget-password:hover{
+   width: 120px;
+    padding: 10px;
+}
+
+.login-responsive:hover img, .forget-password:hover img{
+    display: none;
+}
+
+.login-responsive:hover .link-login, .forget-password:hover .link-login{
+    opacity: 1;
+    visibility: visible;
+    color: black;
+}
+
+.form-responsive{
+    padding: 0px 50px 0px 50px;
+} 
+
+#bodyLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    background-image: url(../imgs/fundo-site-dpbox.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}

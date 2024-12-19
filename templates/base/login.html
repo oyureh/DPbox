@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="{% static 'global/css/style.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'global/css/login.css' %}">
     <link rel="shortcut icon" href="{% static 'global/imgs/62941cardfilebox_109271.ico' %}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>login</title>
     <style>
-        :root {
+        /* :root {
         --cor01: #ffcc14;
         --cor02: #1a3e78;
         --cor03: #0F23D9;
@@ -24,7 +24,7 @@
             margin: 0%;
             padding: 0%;
         }
-
+ */
 
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins");
@@ -258,7 +258,7 @@ input {
 }
 
 .overlay {
-    background-image: url(../static/global/imgs/IMG-LOGIN.png);
+    background-image: url(../static/global/imgs/2-fundo-login.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
@@ -326,98 +326,144 @@ input {
     border: 1px solid var(--cor04);
 }
 
-#mainLogin{
+#formulario{
     display: none;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-        #bodyLogin{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        font-family: "Poppins", sans-serif;
-        background-image: url(../static/global/imgs/fundo-site-dpbox.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        height: 100vh;
-    }
-
-    #mainLogin{
-        display:initial;
-        background-color: var(--cor08);
-        border-radius: 25px;
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-        position: relative;
-        width: 320px;
-        height: 500px;
-        max-width: 100%;
-        overflow:scroll;
-    }
-
- #formulario{
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--cor08);
-    border-radius: 10px;
-    padding-bottom: 40px;
-    padding-top: 30px;
-}
-
-
-.campo{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    height: 30px;
-    border: 1px solid var(--cor02);
-    margin: 5px;
-    padding: 5px;
-    border-radius: 5px;
-    margin: 20px;
-}
-
-.input-login{
-    background-color: transparent;
-    border: none;
-    outline: none;
-}
-
-.cadastrar{
-    background-color: var(--cor02);
-    border-radius: 10px;
-    width: 82%;
-    height: 40px;
-    margin-left: 20px;
-    color: var(--cor08);
-    border: none;
-    outline: none;
-}
-
-
-.container {
+@media (max-width: 800px) {
+    .container{
         display: none;
     }
+
+    #formulario{
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        padding-bottom: 40px;       
+        background-color: var(--cor08);
+        width: 300px;
+        height: 450px;   
+        border-radius: 10px;
+    }
+
+    .form-responsive{
+        background-color: transparent;  
+    }
+
+    .campo{
+        border: 1px solid var(--cor02);
+        margin: 5px;
+        padding: 5px;
+        height: 30px;
+        border-radius: 5px;
+        margin: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .input-login{
+        background-color:transparent;
+        border: none;
+        outline: none;
+
+    }
+
+    .cadastrar{
+        background-color: var(--cor02);
+        border-radius: 10px;
+        width: 82%;
+        height: 40px;
+        margin-left: 20px;
+        color: var(--cor08);
+        border: none;
+        outline: none;
+    }
+
+    .login-responsive, .forget-password{
+        background-color: #f8951d;
+        width: 35px;
+        height: 35px;
+        transition: 1s ease;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items:center ;
+        position: relative;
+    }
+
+    .login-responsive img, .forget-password img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .link-login {
+        opacity: 0;
+        visibility:hidden;
+        font-size: 12px;
+        color: black;
+        transition: 1.5s ease; 
+    }
+
+    .login-responsive{
+        position:fixed;
+        left: -19%;
+        transform: translateX(82%);
+    }
+
+    .forget-password{
+        position:fixed;
+        left: -19%;
+        top:60%;
+        transform: translateX(82%);
+    }
+
+    .login-responsive:hover, .forget-password:hover{
+       width: 120px;
+        padding: 10px;
+    }
+
+    .login-responsive:hover img, .forget-password:hover img{
+        display: none;
+    }
+
+    .login-responsive:hover .link-login, .forget-password:hover .link-login{
+        opacity: 1;
+        visibility: visible;
+        color: var(--cor07);
+    }
+
+    .form-responsive{
+        padding: 0px;
+    }
 }
-
-
     </style>
 </head>
 <body id="bodyLogin">
 
-        <main id="mainLogin">
             <div id="formulario">
-                <div class="register-container form-container">
-                    <img class="logoLogin" src="{% static 'global/imgs/dpbox-logo2.png'%}" alt="dpboxlogo" width="310px" height="200px">
+                
+
+                <img class="logoLogin" src="{% static 'global/imgs/dpbox-logo2.png'%}" alt="dpboxlogo" width="310px" height="200px">
+                
+                <div class="forget-password"> 
+                    <img src="{%static 'global/imgs/arrow-right.svg' %}" alt="seta direita" width="24" height="24"> 
+                    <a class="link-login" href="#"> Esqueceu sua senha clique aqui</a>
+                </div>
+
+                <div class="login-responsive">
+                     <img src="{%static 'global/imgs/arrow-right.svg' %}" alt="seta direita" width="24" height="24">
+                     <a class="link-login" href="{ url 'cadastro'}">Já tem um cadastro? clique aqui para logar</a>
+                </div>
+
                     <form class="form-responsive" action="{% url 'usuarios'%}  " method="POST">
                     {% csrf_token %}
                         <div class="campo">
@@ -433,44 +479,9 @@ input {
                             <input class="input-login"   type="password" name="senha" id="isenha" placeholder="Sua senha"
                             autocomplete="current-password" >
                         </div>
-                        <input  class="cadastrar" type="submit" value="Cadastrar">
+                        <input  class="cadastrar" type="submit" value="entrar">
                     </form>
-                </div>
-
-                <div class="form-login">
-                    <form class="login-container form-container" action="">
-                        <div class="campo">
-                            <i class="material-icons">mail</i>
-                            <input class="input-login"  type="email" name="gmail" id="ilogin" placeholder="Seu gmail" autocomplete="email" required minlength="15">
-                        </div>
-                        <div class="campo">
-                            <i class="material-icons">vpn_key</i>
-                            <input class="input-login"   type="password" name="senha" id="isenha" placeholder="Sua senha"
-                            autocomplete="current-password" >
-                        </div>
-                        <input  class="cadastrar" type="submit" value="Login">
-
-                        <a href="#">Esqueceu a senha?</a>
-                    </form>
-                </div>
             </div>
-
-            <!-- <div class="overelay-responsive">
-                <div class="overlay-panel-responsive overlay-left-responsive">
-                    <h3 class="title-responsive">Bem-vindo de volta </h3>
-                    <button class="ghost-responsive" id="login">Login
-                        <img class="register-responsive" src="{% static 'global/imgs/arrow-right.svg'%}" alt="seta esquerda">
-                    </button>
-                </div>
-
-                <div class="overlay-panel-responsive overlay-left-responsive">
-                    <h3 class="title-responsive">Faça seu cadastro dpbox</h3>
-                    <button class="ghost-responsive" id="register">Cadastro
-                        <img class="login-responsive" src="{% static 'global/imgs/arrow-left.svg' %}" alt="seta direta">
-                    </button>
-                </div>
-            </div>       -->
-        </main>
 
     <div class="container" id="container">
 
@@ -536,6 +547,18 @@ input {
     </div>
     
       <script src="{% static 'global/js/double-slide.js' %}"></script>
-    
+    <script>
+        const registerButton = document.getElementById("register");
+        const loginButton = document.getElementById("login");
+        const container = document.getElementById("container");
+
+        registerButton.addEventListener("click", () => {
+        container.classList.add("right-panel-active");
+        });
+
+        loginButton.addEventListener("click", () => {
+        container.classList.remove("right-panel-active");
+        });
+    </script>
 </body>
 </html>

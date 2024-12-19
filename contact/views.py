@@ -27,6 +27,12 @@ def _header_usuarios(request):
         'contact/_header_usuarios'
     )
 
+def cadastro(request):
+    return render(
+        request,
+        'contact/cadastro.html'
+    )
+
 def usuarios(request):
     if request.method == 'POST':
         nome = request.POST.get('nome')
