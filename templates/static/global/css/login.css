@@ -24,7 +24,7 @@
      align-items: center;
      flex-direction: column;
      font-family: "Poppins", sans-serif;
-     background-image: url(../static/global/imgs/fundo-site-dpbox.png);
+     background-image: url(../imgs/fundo-site-dpbox.png);
      background-repeat: no-repeat;
      background-size: cover;
      width: 100%;
@@ -246,7 +246,7 @@
  }
  
  .overlay {
-     background-image: url(../static/global/imgs/2-fundo-login.png);
+     background-image: url(../imgs/2-fundo-login.png);
      background-repeat: no-repeat;
      background-size: cover;
      background-position: 0 0;

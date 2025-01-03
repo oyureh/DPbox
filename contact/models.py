@@ -1,18 +1,41 @@
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.db import models
 from django.utils import timezone
-from django.core.validators import MinLengthValidator
-from django.contrib.auth.models import User
+
+class UsuariosManager(BaseUserManager):
+    def create_user(self, email, password=None, **extra_fields):
+        """
+        Cria e retorna um usuário com email e senha.
+        """
+        if not email:
+            raise ValueError('O email é obrigatório')
+        email = self.normalize_email(email)
+        user = self.model(gmail=email, **extra_fields)
+        user.set_password(password)  
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, password=None, **extra_fields):
+        extra_fields.setdefault('is_admin', True)
+        return self.create_user(email, password, **extra_fields)
 
 
-class Usuarios(models.Model):
+class Usuarios(AbstractBaseUser):
+    # Definindo os campos do modelo
     id_usuario = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=255)
-    gmail = models.EmailField(max_length=255, unique=True)
-    senha = models.CharField(max_length=255, validators=[MinLengthValidator(4)])
-    created_date = models.DateTimeField(default=timezone.now)
+    gmail = models.EmailField(max_length=255, unique=True)  
+    senha = models.CharField(max_length=255)  # Campo de senha (será criptografada)
+    created_date = models.DateTimeField(default=timezone.now)  
+    is_active = models.BooleanField(default=True)  
+    is_admin = models.BooleanField(default=False) 
 
-# esse def serve para retornar o nome dos cadastro no admin do django 
-    def __str__(self) -> str:
-        return f'{self.nome}'
-    
+    USERNAME_FIELD = 'gmail'  
+    REQUIRED_FIELDS = ['nome']  
+
+    objects = UsuariosManager() 
+
+    def __str__(self):
+        return self.nome
+
 

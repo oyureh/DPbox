@@ -489,8 +489,12 @@ tr:hover {
     border: none;
     outline: none;
     padding: 0px 10px 0px 10px;
-
 }
+
+.input-login:active{
+    outline: auto;
+}
+
 
 .cadastrar{
     background-color: var(--cor02);
@@ -505,14 +509,13 @@ tr:hover {
 
 .login-responsive, .forget-password{
     background-color: #f8951d;
-    width: 35px;
-    height: 35px;
     transition: 1s ease;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items:center ;
     position: relative;
+    cursor:pointer;
 }
 
 .login-responsive img, .forget-password img{
@@ -544,20 +547,28 @@ tr:hover {
     transform: translateX(82%);
 }
 
-.login-responsive:hover, .forget-password:hover{
-   width: 120px;
-    padding: 10px;
+#expandir .link-login {
+    display: none; 
+    white-space: nowrap;
+    color: white;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+#expandir.expanded {
+    width: 200px; 
+    height: 35px;
+    padding: 5px; 
 }
 
-.login-responsive:hover img, .forget-password:hover img{
+#expandir.expanded .link-login {
+    display: inline; 
+}
+
+#expandir.expanded img {
     display: none;
-}
+  }
 
-.login-responsive:hover .link-login, .forget-password:hover .link-login{
-    opacity: 1;
-    visibility: visible;
-    color: black;
-}
 
 .form-responsive{
     padding: 0px 50px 0px 50px;
